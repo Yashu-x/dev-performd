@@ -6,7 +6,7 @@ export default function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <header className="relative ">
+    <header className="relative z-50 bg-white shadow-sm">
       {/* Announcement Bar */}
       <div className="w-full bg-[#22A18D] text-white text-center py-2 text-sm font-medium">
         All Started with a Comprehensive Strategy -{" "}
@@ -18,246 +18,232 @@ export default function Header() {
         </a>
       </div>
 
-      <div className="flex flex-col px-4 pt-4 mx-auto text-black roboto-regular max-w-7xl md:mx-10 lg:mx-20 xl:mx-auto md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-row items-center justify-between p-4">
-          {/* Logo */}
-          <Link href="/">
-            <img src="/images/logo.png" width={150} height={20} alt="Logo" />
-          </Link>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:w-0 lg:flex-1">
+            <Link href="/">
+              <a className="flex items-center">
+                <span className="sr-only">Logo</span>
+                <img src="/images/logo.png" className="h-8 w-auto sm:h-10" alt="Logo" />
+              </a>
+            </Link>
+          </div>
 
-          {/* Hamburger Menu Button (Mobile) */}
-          <button
-            className="px-3 py-1 bg-white rounded-full cursor-pointer bg-opacity-30 focus:outline-none md:hidden"
-            type="button"
-            aria-label="button"
-            onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            {navbarOpen ? (
-              <X size={24} className="text-gray-800" />
-            ) : (
-              <Menu size={24} className="text-gray-800" />
-            )}
-          </button>
-        </div>
+          <div className="-mr-2 -my-2 md:hidden">
+            <button
+              type="button"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#22A18D]"
+              onClick={() => setNavbarOpen(true)}
+            >
+              <span className="sr-only">Open menu</span>
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center">
-          <NavLinks />
+          <nav className="hidden md:flex space-x-10 items-center">
+            <NavLinks desktop={true} />
+          </nav>
+
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <a
+              href="#contact"
+              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-[#22A18D] hover:bg-opacity-90"
+            >
+              FREE STRATEGY CALL
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
-          navbarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 md:hidden`}
+        className={`${navbarOpen ? "fixed inset-0 z-50 md:hidden" : "hidden"}`}
+        role="dialog"
+        aria-modal="true"
       >
-        <div className="flex justify-between p-5 border-b">
-          <h2 className="text-xl font-semibold text-gray-800">Menu</h2>
-          <button onClick={() => setNavbarOpen(false)}>
-            <X size={24} className="text-gray-800" />
-          </button>
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-75" onClick={() => setNavbarOpen(false)}></div>
+        <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col overflow-y-auto">
+          <div className="flex items-center justify-between px-5 pt-5 pb-6">
+            <div>
+              <img src="/images/logo.png" className="h-8 w-auto" alt="Logo" />
+            </div>
+            <div className="-mr-2">
+              <button
+                type="button"
+                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#22A18D]"
+                onClick={() => setNavbarOpen(false)}
+              >
+                <span className="sr-only">Close menu</span>
+                <X className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+          <div className="px-5 py-6 space-y-6">
+            <nav className="grid gap-y-8">
+              <NavLinks desktop={false} closeMenu={() => setNavbarOpen(false)} />
+            </nav>
+            <div>
+              <a
+                href="#contact"
+                className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-[#22A18D] hover:bg-opacity-90"
+                onClick={() => setNavbarOpen(false)}
+              >
+                FREE STRATEGY CALL
+              </a>
+            </div>
+          </div>
         </div>
-
-        {/* Mobile Navigation Links */}
-        <nav className="flex flex-col space-y-6 p-6">
-          <NavLinks closeMenu={() => setNavbarOpen(false)} />
-        </nav>
       </div>
-
-      {/* Overlay (Click outside to close) */}
-      {/* {navbarOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-50 md:hidden"
-          onClick={() => setNavbarOpen(false)}
-        ></div>
-      )} */}
     </header>
   );
 }
 
-// Navigation Links Component
-function NavLinks({ closeMenu }) {
-  return (
-    <ul className="flex flex-wrap items-center justify-end flex-grow gap-2 pr-4 space-x-2 md:gap-6 md:space-x-6">
-      {[
-        { href: "/services", label: "Services" },
-        { href: "/aboutUs", label: "About" },
-        { href: "/contactUs", label: "Contact" },
-      ].map((item) => (
-        <li key={item.href}>
-          <a
-            href={item.href}
-            className="text-lg font-semibold text-white md:text-black hover:text-gray-300 md:hover:text-gray-700"
-            onClick={closeMenu}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
+function NavLinks({ desktop, closeMenu }) {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-      <li>
-        <a
-          href="#contact"
-          className="border-2 border-[#22A18D] rounded-full font-bold px-4 text-lg text-[#22A18D] shadow-sm transition-colors duration-75 group gap-[0.25em] inline-flex items-center py-1.5 hover:cursor-pointer hover:bg-opacity-90"
-          onClick={closeMenu}
+  if (desktop) {
+    return (
+      <>
+        <div
+          className="relative group"
+          onMouseEnter={() => setDropdownOpen(true)}
+          onMouseLeave={() => setDropdownOpen(false)}
         >
-          FREE STRATEGY CALL
+          <button
+            className="text-gray-900 group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-[#22A18D] focus:outline-none"
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+          >
+            <span>Services</span>
+            <svg
+              className={`ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+
+          {/* Desktop Dropdown */}
+          <div
+            className={`absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-xs sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 transition-all duration-200 ${dropdownOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-1 invisible'}`}
+          >
+            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                <Link
+                  href="/services"
+                  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  <div className="ml-4">
+                    <p className="text-base font-medium text-gray-900">SEO</p>
+                  </div>
+                </Link>
+                <Link
+                  href="/googleAds"
+                  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  <div className="ml-4">
+                    <p className="text-base font-medium text-gray-900">Google Ads</p>
+                  </div>
+                </Link>
+                <Link
+                  href="/googleAds"
+                  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  <div className="ml-4">
+                    <p className="text-base font-medium text-gray-900">Social Media Ads</p>
+                  </div>
+                </Link>
+                <Link
+                  href="/googleAds"
+                  className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 transition ease-in-out duration-150"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  <div className="ml-4">
+                    <p className="text-base font-medium text-gray-900">Marketplace Management</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <Link href="/aboutUs" className="text-base font-medium text-gray-900 hover:text-[#22A18D]">
+          About
+        </Link>
+        <Link href="/contactUs" className="text-base font-medium text-gray-900 hover:text-[#22A18D]">
+          Contact
+        </Link>
+      </>
+    );
+  }
+
+  // Mobile NavLinks
+  return (
+    <div className="space-y-4">
+      <div>
+        <button
+          type="button"
+          className="flex items-center justify-between w-full text-base font-medium text-gray-900 hover:text-[#22A18D]"
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+        >
+          <span>Services</span>
           <svg
-            viewBox="0 0 16 16"
-            height="1em"
-            width="1em"
-            fill="none"
+            className={`ml-2 h-5 w-5 text-gray-400 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
             xmlns="http://www.w3.org/2000/svg"
-            className="relative transition-transform duration-200 motion-safe:-translate-x-1 group-hover:translate-x-0"
+            viewBox="0 0 20 20"
+            fill="currentColor"
           >
             <path
-              fill="currentColor"
-              d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-            ></path>
-            <path
-              stroke="currentColor"
-              d="M1.75 8H11"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              className="origin-left transition-all duration-200 opacity-0 motion-safe:-translate-x-1 group-hover:translate-x-0 group-hover:opacity-100"
-            ></path>
+              fillRule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
           </svg>
-        </a>
-      </li>
-    </ul>
+        </button>
+        {dropdownOpen && (
+          <div className="mt-2 pl-4 space-y-2">
+            <Link
+              href="/services"
+              className="block text-base font-medium text-gray-600 hover:text-[#22A18D]"
+              onClick={closeMenu}
+            >
+              SEO
+            </Link>
+            <Link
+              href="/googleAds"
+              className="block text-base font-medium text-gray-600 hover:text-[#22A18D]"
+              onClick={closeMenu}
+            >
+              Google Ads
+            </Link>
+          </div>
+        )}
+      </div>
+      <Link
+        href="/aboutUs"
+        className="block text-base font-medium text-gray-900 hover:text-[#22A18D]"
+        onClick={closeMenu}
+      >
+        About
+      </Link>
+      <Link
+        href="/contactUs"
+        className="block text-base font-medium text-gray-900 hover:text-[#22A18D]"
+        onClick={closeMenu}
+      >
+        Contact
+      </Link>
+    </div>
   );
 }
 
-//previous header
 
-// export default function Header() {
-//   const [navbarOpen, setNavbarOpen] = useState(false);
-//   return (
-//     <header>
-//       {/* Announcement Bar */}
-//       <div className="w-full bg-[#22A18D] text-white text-center py-2 text-sm font-medium">
-//         All Started with a Comprehensive Strategy -
-//         <a
-//           href="https://calendar.app.google/tacG18pnuxwwx7yR6"
-//           className="underline font-semibold hover:opacity-80 transition-opacity"
-//           target="_blank"
-//         >
-//           {" "}
-//           Get Your Free Strategy Call Now 🚀
-//         </a>
-//       </div>
-//       <div className="flex flex-col px-4 pt-4 mx-auto text-black roboto-regular max-w-7xl md:mx-10 lg:mx-20 xl:mx-auto md:flex-row md:items-center md:justify-between">
-//         <div className="flex flex-row items-center justify-between p-4">
-//           <Link href="/">
-//             <img src="/images/logo.png" width={150} height={20} alt="Logo" />
-//           </Link>
-
-//           <button
-//             className="px-3 py-1 bg-white rounded-full cursor-pointer bg-opacity-30 focus:outline-none md:hidden"
-//             type="button"
-//             aria-label="button"
-//             onClick={() => setNavbarOpen(!navbarOpen)}
-//           >
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               width="24"
-//               height="24"
-//               viewBox="0 0 24 24"
-//               fill="none"
-//               stroke="#fff"
-//               strokeWidth="2"
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//             >
-//               <line x1="3" y1="12" x2="21" y2="12"></line>
-//               <line x1="3" y1="6" x2="21" y2="6"></line>
-//               <line x1="3" y1="18" x2="21" y2="18"></line>
-//             </svg>
-//           </button>
-//         </div>
-//         <div
-//           className={
-//             "mt-3 flex-grow items-start md:flex lg:mt-0" +
-//             (navbarOpen ? " flex" : " hidden")
-//           }
-//         >
-//           <div className="flex-col pl-4 text-xl md:flex-grow md:pl-0">
-//             <ul className="flex flex-wrap items-center justify-end flex-grow gap-2 pr-4 space-x-2 md:gap-6 md:space-x-6">
-//               <li>
-//                 <a
-//                   href="#services"
-//                   className="text-lg text-white font-semibold md:text-black hover:text-gray-300 md:hover:text-gray-700"
-//                 >
-//                   Services
-//                 </a>
-//               </li>
-//               {/* <li>
-//                 <a
-//                   href="#demo"
-//                   className="text-lg text-white md:text-black hover:text-gray-300 md:hover:text-gray-700"
-//                 >
-//                   Demo
-//                 </a>
-//               </li> */}
-//               <li>
-//                 <a
-//                   href="#about"
-//                   className="text-lg font-semibold text-white md:text-black hover:text-gray-300 md:hover:text-gray-700"
-//                 >
-//                   About
-//                 </a>
-//               </li>
-//               {/* <li>
-//                 <a
-//                   href="#blog"
-//                   className="text-lg text-white md:text-black hover:text-gray-300 md:hover:text-gray-700"
-//                 >
-//                   Blogs
-//                 </a>
-//               </li> */}
-//               <li>
-//                 <a
-//                   href="#contact"
-//                   className="text-lg text-white font-semibold md:text-black hover:text-gray-300 md:hover:text-gray-700"
-//                 >
-//                   Contact
-//                 </a>
-//               </li>
-
-//               <li>
-//                 <a
-//                   href="https://calendar.app.google/tacG18pnuxwwx7yR6"
-//                   className="border-2 border-[#22A18D] rounded-full  font-bold px-4 text-lg text-[#22A18D] md:text-[#22A18D] shadow-sm transition-colors duration-75 group gap-[0.25em] inline-flex items-center py-1.5 hover:cursor-pointer hover:bg-opacity-90"
-//                   target="_blank"
-//                 >
-//                   FREE STRATEGY CALL
-//                   <svg
-//                     viewBox="0 0 16 16"
-//                     height="1em"
-//                     width="1em"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     className="relative transition-transform duration-200 motion-safe:-translate-x-1 group-hover:translate-x-0"
-//                   >
-//                     <path
-//                       fill="currentColor"
-//                       d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-//                     ></path>
-//                     <path
-//                       stroke="currentColor"
-//                       d="M1.75 8H11"
-//                       strokeWidth="1.5"
-//                       strokeLinecap="round"
-//                       className="origin-left transition-all duration-200 opacity-0 motion-safe:-translate-x-1 group-hover:translate-x-0 group-hover:opacity-100"
-//                     ></path>
-//                   </svg>
-//                 </a>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
