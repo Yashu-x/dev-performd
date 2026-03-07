@@ -46,7 +46,7 @@ const GoogleAdsSection: React.FC<GoogleAdsSectionProps> = ({
         </div>
 
         {/* Right Image Section */}
-        <div className="flex-1">
+        <div className="hidden md:block flex-1">
           {imageSrc ? (
             <img
               src={imageSrc}
