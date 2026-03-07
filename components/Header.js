@@ -162,6 +162,8 @@ function NavLinks({ closeMenu, isMobile }) {
 
       {[
         { href: "/aboutUs", label: "About" },
+        { href: "/career", label: "Careers" },
+        { href: "/testimonials", label: "Client Testimonials" },
         { href: "/contactUs", label: "Contact" },
       ].map((item) => (
         <li key={item.href}>
