@@ -68,7 +68,7 @@ export default function Reviews() {
   }, []);
 
   return (
-    <section className="bg-gradient-to-r from-primary/25 to-primary/45 py-12 relative overflow-hidden">
+    <section className="bg-gradient-to-r from-primary/25 to-primary/45 py-12 relative overflow-hidden w-full">
       <div className="w-full px-4 sm:px-8 lg:px-16">
         <p className="text-center text-primary font-semibold uppercase">Testimonials</p>
         <h2 className="text-center text-2xl sm:text-3xl font-bold mb-8">
