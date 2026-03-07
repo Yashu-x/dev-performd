@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import Head from 'next/head';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import BlogHero from '../../components/blogs/BlogHero';
+import BlogFilter from '../../components/blogs/BlogFilter';
+import FeaturedBlogs from '../../components/blogs/FeaturedBlogs';
+import BlogGrid from '../../components/blogs/BlogGrid';
+import { blogs, categories } from '../../data/blogs';
+
+const BlogsPage = () => {
+    const [activeCategory, setActiveCategory] = useState('All');
+
+    const filteredBlogs = activeCategory === 'All'
+        ? blogs
+        : blogs.filter(blog => blog.category === activeCategory);
+
+    return (
+        <div className="min-h-screen bg-white font-roboto">
+
+            <main>
+                <BlogHero />
+
+                <div className="container px-4 mx-auto md:px-10 lg:px-20 -mt-10 mb-20 relative z-20">
+                    <div className="p-8 bg-white shadow-2xl rounded-3xl border border-gray-100">
+                        <BlogFilter
+                            categories={categories}
+                            activeCategory={activeCategory}
+                            onCategoryChange={setActiveCategory}
+                        />
+
+                        {activeCategory === 'All' && (
+                            <FeaturedBlogs blogs={blogs.slice(0, 4)} />
+                        )}
+
+                        <div className="mt-12">
+                            {activeCategory === 'All' ? (
+                                <h2 className="mb-12 text-3xl font-bold text-center text-gray-900 md:text-5xl">
+                                    Explore Our Latest <span className="text-primary italic">Articles</span>
+                                </h2>
+                            ) : (
+                                <h2 className="mb-8 text-2xl font-bold text-gray-900 border-b pb-4">
+                                    Articles in <span className="text-primary">{activeCategory}</span>
+                                </h2>
+                            )}
+                            <BlogGrid blogs={filteredBlogs} />
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    );
+};
+
+export default BlogsPage;
