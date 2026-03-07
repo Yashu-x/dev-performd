@@ -135,7 +135,7 @@ function NavLinks({ closeMenu, isMobile }) {
               Google Ads
             </a>
           </Link>
-          <Link href="/googleAds">
+          <Link href="/socialMediaAds">
             <a
               className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
               onClick={() => {
@@ -146,7 +146,7 @@ function NavLinks({ closeMenu, isMobile }) {
               Social Media Ads
             </a>
           </Link>
-          <Link href="/googleAds">
+          <Link href="/marketplaceManagement">
             <a
               className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
               onClick={() => {
@@ -161,6 +161,7 @@ function NavLinks({ closeMenu, isMobile }) {
       </li>
 
       {[
+        { href: "/blogs", label: "Blogs" },
         { href: "/aboutUs", label: "About" },
         { href: "/career", label: "Careers" },
         { href: "/testimonials", label: "Client Testimonials" },
