@@ -32,8 +32,6 @@ const BlogPostPage = () => {
                 <meta name="description" content={blog.excerpt} />
             </Head>
 
-            <Header />
-
             <main className="py-20">
                 <div className="container max-w-4xl px-4 mx-auto">
                     <Link href="/blogs">
@@ -77,8 +75,6 @@ const BlogPostPage = () => {
                     </div>
                 </div>
             </main>
-
-            <Footer />
         </div>
     );
 };
