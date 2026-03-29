@@ -78,7 +78,6 @@ export default function BlogPage() {
       title: "Marketplace Management",
       description:
         "Streamline your e-commerce presence across major marketplaces through optimized listings, competitive insights, and comprehensive expert account oversight.",
-      readMoreLink: "/marketplaceManagement",
     },
     {
       image:
@@ -86,7 +85,6 @@ export default function BlogPage() {
       title: " Marketplace Advertising",
       description:
         "Accelerate product visibility on leading marketplaces by leveraging targeted ad campaigns, precise keyword strategies, and data-driven optimizations.",
-      readMoreLink: "/googleAds",
     },
     {
       image:
@@ -94,7 +92,6 @@ export default function BlogPage() {
       title: "Social Media Advertising",
       description:
         "Elevate brand awareness and conversions through tailored ads, refined audience segments, and highly compelling creative strategies",
-      readMoreLink: "/socialMediaAds",
     },
     {
       image:
@@ -102,7 +99,6 @@ export default function BlogPage() {
       title: "Search Engine Advertising",
       description:
         "Boost traffic and drive ROI using strategic search engine advertising campaigns, intelligent bidding models, and continuous performance monitoring.",
-      readMoreLink: "/googleAds",
     },
     {
       image:
@@ -110,7 +106,6 @@ export default function BlogPage() {
       title: "Strategic Lead Generation Ads",
       description:
         "Drive high-quality leads with data-driven campaigns, compelling creative, and precision targeting, significantly maximizing conversions and customer acquisition.",
-      readMoreLink: "/contactUs",
     },
     {
       image:
@@ -118,7 +113,6 @@ export default function BlogPage() {
       title: "Conversion Rate Optimization",
       description:
         "Maximize revenue potential through data-driven website enhancements, precise funnel diagnostics, and meticulous testing for continuous sales improvements.",
-      readMoreLink: "/contactUs",
     },
   ];
 

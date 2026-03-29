@@ -4,8 +4,12 @@ export const OfficeSchema = z.object({
   name: z.string(),
   address: z.string(),
   phone: z.string(),
-  email: z.string().email(),
-  mapUrl: z.string().url(),
+  email: z.string().refine((v) => v === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), {
+    message: "Invalid email",
+  }),
+  mapUrl: z.string().refine((v) => v === "" || v.startsWith("http"), {
+    message: "Invalid URL",
+  }),
 });
 
 export const FAQSchema = z.object({
@@ -16,7 +20,9 @@ export const FAQSchema = z.object({
 export const ContactUsSchema = z.object({
   heroTitle: z.string(),
   heroSubtitle: z.string(),
-  contactEmail: z.string().email(),
+  contactEmail: z.string().refine((v) => v === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), {
+    message: "Invalid email",
+  }),
   contactPhone: z.string(),
   contactAddress: z.string(),
   offices: z.array(OfficeSchema),

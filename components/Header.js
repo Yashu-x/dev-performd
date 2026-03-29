@@ -11,7 +11,7 @@ export default function Header() {
       <div className="w-full bg-[#22A18D] text-white text-center py-2 text-sm font-medium">
         All Started with a Comprehensive Strategy -{" "}
         <a
-          href="#contact"
+          href="/contactUs"
           className="underline font-semibold hover:opacity-80 transition-opacity"
         >
           Get Your Free Strategy Call Now 🚀
@@ -22,9 +22,7 @@ export default function Header() {
         <div className="flex flex-row items-center justify-between p-4">
           {/* Logo */}
           <Link href="/">
-            <a>
-              <img src="/images/logo.png" width={150} height={20} alt="Logo" />
-            </a>
+            <img src="/images/logo.png" width={150} height={20} alt="Logo" />
           </Link>
 
           {/* Hamburger Menu Button (Mobile) */}
@@ -50,8 +48,9 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${navbarOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 z-50 md:hidden`}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
+          navbarOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 md:hidden`}
       >
         <div className="flex justify-between p-5 border-b">
           <h2 className="text-xl font-semibold text-gray-800">Menu</h2>
@@ -62,115 +61,35 @@ export default function Header() {
 
         {/* Mobile Navigation Links */}
         <nav className="flex flex-col space-y-6 p-6">
-          <NavLinks closeMenu={() => setNavbarOpen(false)} isMobile={true} />
+          <NavLinks closeMenu={() => setNavbarOpen(false)} />
         </nav>
       </div>
 
       {/* Overlay (Click outside to close) */}
-      {navbarOpen && (
+      {/* {navbarOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-50 md:hidden z-40"
+          className="fixed inset-0 bg-black opacity-50 md:hidden"
           onClick={() => setNavbarOpen(false)}
         ></div>
-      )}
+      )} */}
     </header>
   );
 }
 
 // Navigation Links Component
-function NavLinks({ closeMenu, isMobile }) {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
+function NavLinks({ closeMenu }) {
   return (
-    <ul className={`${isMobile ? "flex flex-col space-y-6" : "flex flex-wrap items-center justify-end flex-grow gap-2 pr-4 space-x-2 md:gap-6 md:space-x-6"}`}>
-      {/* Services Dropdown */}
-      <li
-        className="relative group"
-        onMouseEnter={() => !isMobile && setDropdownOpen(true)}
-        onMouseLeave={() => !isMobile && setDropdownOpen(false)}
-      >
-        <button
-          className="flex items-center gap-1 text-lg font-semibold text-gray-800 hover:text-gray-700 focus:outline-none transition-colors"
-          onClick={() => setDropdownOpen(!dropdownOpen)}
-        >
-          Services
-          <svg
-            className={`w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        {/* Dropdown Menu */}
-        <div
-          className={`
-            ${isMobile
-              ? `mt-2 pl-4 space-y-3 ${dropdownOpen ? 'block' : 'hidden'}`
-              : `absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-lg border border-gray-100 py-2 z-50 transition-all duration-200 ${dropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'}`
-            }
-          `}
-        >
-          <Link href="/services">
-            <a
-              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
-              onClick={() => {
-                setDropdownOpen(false);
-                closeMenu && closeMenu();
-              }}
-            >
-              SEO
-            </a>
-          </Link>
-          <Link href="/googleAds">
-            <a
-              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
-              onClick={() => {
-                setDropdownOpen(false);
-                closeMenu && closeMenu();
-              }}
-            >
-              Google Ads
-            </a>
-          </Link>
-          <Link href="/socialMediaAds">
-            <a
-              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
-              onClick={() => {
-                setDropdownOpen(false);
-                closeMenu && closeMenu();
-              }}
-            >
-              Social Media Ads
-            </a>
-          </Link>
-          <Link href="/marketplaceManagement">
-            <a
-              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
-              onClick={() => {
-                setDropdownOpen(false);
-                closeMenu && closeMenu();
-              }}
-            >
-              Marketplace Management
-            </a>
-          </Link>
-        </div>
-      </li>
-
+    <ul className="flex flex-wrap items-center justify-end flex-grow gap-2 pr-4 space-x-2 md:gap-6 md:space-x-6">
       {[
-        { href: "/blogs", label: "Blogs" },
+        { href: "/services", label: "Services" },
         { href: "/aboutUs", label: "About" },
-        { href: "/career", label: "Careers" },
-        { href: "/testimonials", label: "Client Testimonials" },
         { href: "/contactUs", label: "Contact" },
+        { href: "/career", label: "Careers" },
       ].map((item) => (
         <li key={item.href}>
           <a
             href={item.href}
-            className="text-lg font-semibold text-gray-800 hover:text-gray-700 transition-colors"
+            className="text-lg font-semibold text-white md:text-black hover:text-gray-300 md:hover:text-gray-700"
             onClick={closeMenu}
           >
             {item.label}
@@ -180,8 +99,8 @@ function NavLinks({ closeMenu, isMobile }) {
 
       <li>
         <a
-          href="#contact"
-          className="border-2 border-[#22A18D] rounded-full font-bold px-4 text-lg text-[#22A18D] shadow-sm transition-colors duration-75 group gap-[0.25em] inline-flex items-center py-1.5 hover:cursor-pointer hover:bg-opacity-90 mt-2 md:mt-0"
+          href="/contactUs"
+          className="border-2 border-[#22A18D] rounded-full font-bold px-4 text-lg text-[#22A18D] shadow-sm transition-colors duration-75 group gap-[0.25em] inline-flex items-center py-1.5 hover:cursor-pointer hover:bg-opacity-90"
           onClick={closeMenu}
         >
           FREE STRATEGY CALL
