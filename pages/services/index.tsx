@@ -16,7 +16,7 @@ export default function ComingSoon() {
       <BusinessUnderstanding />
       <WhatWeDontDo />
       <Content/>
-      <FAQSection />
+      <FAQSection faqs={[]}/>
     </div>
   );
 }

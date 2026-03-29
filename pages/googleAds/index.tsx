@@ -37,7 +37,7 @@ export default function googleAds() {
         <WorkflowSection steps={stepsData} />
         <BrandsSection/>
         <ReviewsInGoodleAdsPage/>
-        <FAQSection />
+        <FAQSection faqs={[]}/>
     </div>
   );
 }

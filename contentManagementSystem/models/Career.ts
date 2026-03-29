@@ -22,11 +22,11 @@ export interface CareerDocument extends Document {
 
 const JobOpeningSchema = new Schema<JobOpening>(
   {
-    title: { type: String, required: true },
-    category: { type: String, required: true },
-    description: { type: String, required: true },
-    location: { type: String, required: true },
-    salary: { type: String, required: true },
+    title: { type: String, default: "" },
+    category: { type: String, default: "" },
+    description: { type: String, default: "" },
+    location: { type: String, default: "" },
+    salary: { type: String, default: "" },
     tags: { type: [String], default: [] },
     isActive: { type: Boolean, default: true },
   },
@@ -35,9 +35,9 @@ const JobOpeningSchema = new Schema<JobOpening>(
 
 const CareerSchema = new Schema<CareerDocument>(
   {
-    heroTag: { type: String, required: true },
-    heroTitle: { type: String, required: true },
-    heroDescription: { type: String, required: true },
+    heroTag: { type: String, default: "" },
+    heroTitle: { type: String, default: "" },
+    heroDescription: { type: String, default: "" },
     jobOpenings: { type: [JobOpeningSchema], default: [] },
     categories: { type: [String], default: [] },
     isDeleted: { type: Boolean, default: false },

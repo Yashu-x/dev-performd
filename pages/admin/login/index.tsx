@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 const AdminLoginPage: NextPage = () => {
   const router = useRouter();
 
-  // Pages Router way to read ?next=/admin
   const nextUrl = useMemo(() => {
     if (!router.isReady) return "/admin";
 
@@ -15,8 +14,8 @@ const AdminLoginPage: NextPage = () => {
         ? nextParam
         : "/admin";
 
-    // Basic safety: only allow internal redirects
     if (!next.startsWith("/")) return "/admin";
+    if (next.startsWith("/admin/login")) return "/admin"; // prevent loop
 
     return next;
   }, [router.isReady, router.query.next]);
@@ -24,11 +23,11 @@ const AdminLoginPage: NextPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPw, setShowPw] = useState(false);
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+  const isValidEmail = (v: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -121,11 +120,6 @@ const AdminLoginPage: NextPage = () => {
           <button type="submit" style={styles.submit} disabled={loading}>
             {loading ? "Signing in..." : "Sign in"}
           </button>
-
-          <p style={styles.hint}>
-            Tip: Set <code>ADMIN_EMAIL</code> and <code>ADMIN_PASSWORD</code> in{" "}
-            <code>.env.local</code>.
-          </p>
         </form>
       </div>
     </div>
@@ -143,8 +137,7 @@ const styles: Record<string, React.CSSProperties> = {
     background:
       "radial-gradient(1200px 600px at 20% 10%, rgba(59,130,246,0.18), transparent 55%), radial-gradient(1000px 500px at 90% 30%, rgba(168,85,247,0.18), transparent 60%), #0b1020",
     color: "#e5e7eb",
-    fontFamily:
-      'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: "ui-sans-serif, system-ui, sans-serif",
   },
   card: {
     width: "100%",
@@ -154,13 +147,12 @@ const styles: Record<string, React.CSSProperties> = {
     background: "rgba(255,255,255,0.06)",
     backdropFilter: "blur(10px)",
     boxShadow: "0 18px 50px rgba(0,0,0,0.45)",
-    padding: 22,
+    padding: 32,
   },
   header: { marginBottom: 16 },
   badge: {
     display: "inline-flex",
     alignItems: "center",
-    gap: 8,
     padding: "6px 10px",
     borderRadius: 999,
     border: "1px solid rgba(255,255,255,0.14)",
@@ -180,6 +172,8 @@ const styles: Record<string, React.CSSProperties> = {
     background: "rgba(0,0,0,0.22)",
     color: "#e5e7eb",
     outline: "none",
+    fontSize: 14,
+    boxSizing: "border-box",
   },
   passwordWrap: { position: "relative" },
   pwBtn: {
@@ -212,6 +206,6 @@ const styles: Record<string, React.CSSProperties> = {
     color: "#fff",
     fontWeight: 600,
     cursor: "pointer",
+    fontSize: 15,
   },
-  hint: { margin: "8px 0 0", opacity: 0.75, fontSize: 12, lineHeight: 1.4 },
 };
