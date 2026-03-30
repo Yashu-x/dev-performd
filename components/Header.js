@@ -163,7 +163,6 @@ function NavLinks({ closeMenu, isMobile }) {
       {[
         { href: "/blogs", label: "Blogs" },
         { href: "/aboutUs", label: "About" },
-        { href: "/career", label: "Careers" },
         { href: "/testimonials", label: "Client Testimonials" },
         { href: "/contactUs", label: "Contact" },
       ].map((item) => (
