@@ -37,16 +37,22 @@ export default function ContactUsPage({ data }: Props) {
   return (
     <div className="bg-background">
       <HeroSection
-        title={data?.heroTitle}
-        subtitle={data?.heroSubtitle}
+      title={data?.heroTitle}
+      subtitle={data?.heroSubtitle}
       />
       <ContactSection
-        email={data?.contactEmail}
-        phone={data?.contactPhone}
-        address={data?.contactAddress}
+      email={data?.contactEmail}
+      phone={data?.contactPhone}
+      address={data?.contactAddress}
       />
-      <Offices offices={data?.offices ?? []} />
-      <FAQSection faqs={data?.faqs ?? []} />
+      {/* <Offices offices={data?.offices ?? []} /> */}
+      <FAQSection 
+      faqs={
+        data?.faqs?.[0]?.question === "" && data?.faqs?.[0]?.answer === ""
+        ? []
+        : (data?.faqs ?? [])
+      } 
+      />
     </div>
   );
 }

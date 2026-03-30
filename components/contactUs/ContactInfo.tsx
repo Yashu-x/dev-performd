@@ -8,9 +8,7 @@ interface Props {
 }
 
 const DEFAULT_CONTACTS = [
-  { name: "Sales Team", detail: "Looking to scale with digital marketing or build a stellar product?", email: "Hello@Atdigital.io" },
-  { name: "Sales Team", detail: "Looking to scale with digital marketing or build a stellar product?", email: "Hello@Atdigital.io" },
-  { name: "Sales Team", email: "Hello@Atdigital.io" },
+  { name: "Sales Team", detail: "", email: "info@perfomad.com" },
 ];
 
 export default function ContactInfo({ email, phone, address }: Props) {

@@ -19,17 +19,17 @@ export default function HeroSection({ title, subtitle }: Props) {
       </div>
 
       <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold py-4 leading-snug">
-        {title || <>Grow Your Business With Sri Lanka's Top Digital <br className="hidden sm:block" /> Marketing And Technology Company.</>}
+        {title || <>Grow Your Business With Sri Lanka’s Leading MarTech Agency <br className="hidden sm:block" /> </>}
       </h1>
 
       <p className="text-lg sm:text-2xl font-bold text-primary mt-2">
-        {subtitle || "Digital Marketing And Software Development."}
+        {subtitle || "Performance Marketing Powered by Data, Technology, and Scalable Growth Systems."}
       </p>
 
       <p className="text-sm sm:text-lg text-gray-600 mt-4 max-w-xl md:max-w-3xl mx-auto leading-relaxed">
-        Few Agencies Deliver Both Digital Marketing And Technology <br className="hidden sm:block" />
-        Solutions to Drive Your Business Forward — But You've Just <br className="hidden sm:block" />
-        Found One That Does.
+        Most agencies run ads. <br className="hidden sm:block" />
+        We build marketing systems. <br className="hidden sm:block" />
+        At PerfomAd, we combine performance marketing, advanced analytics, and marketing technology to help brands scale across marketplaces, search, and social platforms with measurable results. <br className="hidden sm:block" />
       </p>
 
       <button className="bg-primary text-white font-medium mt-6 px-5 sm:px-6 py-3 rounded-md hover:bg-primary/90 transition">

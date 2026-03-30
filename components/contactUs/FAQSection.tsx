@@ -12,7 +12,7 @@ interface Props {
 }
 
 const FALLBACK_FAQS: FAQ[] = [
-  { question: "What Services Does PerformAd Offer?", answer: "We specialize in comprehensive e-commerce marketing and performance-based strategies, including SEO, PPC, social media marketing, content marketing, and conversion rate optimization." },
+  { question: "What Services Does PerformAd Offer?", answer: "We provide performance-driven marketing and technology solutions to help businesses grow online. Our services include marketplace management, PPC advertising, social media advertising, SEO, and web design & development." },
   { question: "How Do You Measure Success?", answer: "We measure success using key performance indicators (KPIs) like conversions, ROI, engagement, and traffic growth." },
   { question: "Do You Provide Reports On Campaign Performance?", answer: "Yes, we provide detailed reports and analytics so you can track progress and measure performance effectively." },
   { question: "How Do I Get Started With PerformAd?", answer: "You can get started by reaching out to us via our website or contact details provided in the office section." },
