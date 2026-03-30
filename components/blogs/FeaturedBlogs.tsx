@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { BlogPost } from '../../data/blogs';
+import { BlogPost } from '../../lib/blogs';
 import BlogCard from './BlogCard';
 
 interface FeaturedBlogsProps {
@@ -10,6 +10,10 @@ interface FeaturedBlogsProps {
 const FeaturedBlogs: React.FC<FeaturedBlogsProps> = ({ blogs }) => {
     const mainFeatured = blogs[0];
     const sideFeatured = blogs.slice(1, 4);
+
+    if (!mainFeatured) {
+        return null;
+    }
 
     return (
         <div className="grid grid-cols-1 gap-8 mb-20 lg:grid-cols-3">

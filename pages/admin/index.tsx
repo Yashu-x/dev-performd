@@ -18,6 +18,11 @@ const pages = [
     path: "/admin/career",
     description: "Edit hero, job openings, categories",
   },
+  {
+    title: "Blogs",
+    path: "/admin/blogs",
+    description: "Create, edit, publish, and delete blog posts",
+  },
 ];
 
 const AdminDashboard: NextPage = () => {
