@@ -9,11 +9,11 @@ export default function Content({ heading, description }: Props) {
     <div className="w-full bg-primary px-5 py-10 md:py-0">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 text-white">
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 capitalize">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 capitalize pt-10">
             {heading || <>Grow Your Business <br /> with Strategic <br /> Marketing</>}
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
-            {description || "As much as we help our clients reach their fullest business potential, we want to do our part to help our planet flourish every day."}
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed pb-10">
+            {description || "PerfomAd® is a performance-driven marketing agency partnering with brands across the USA, Canada, UAE, UK, Singapore, and Sri Lanka. We help medium and large-scale businesses accelerate digital growth through data-backed strategies that focus on measurable results.Our expertise lies in driving eCommerce revenue, improving profitability, and strengthening online brand presence. With specialized teams across Google, Meta, Amazon, Walmart, TikTok, Web UI/UX Design, App Development, and Technology, we build full-funnel marketing systems designed to scale businesses sustainably."}
           </p>
         </div>
         <div className="flex-1 flex justify-center">

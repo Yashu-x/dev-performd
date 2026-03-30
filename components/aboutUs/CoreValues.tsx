@@ -4,10 +4,10 @@ interface CoreValue { title: string; description: string; }
 interface Props { coreValues: CoreValue[]; }
 
 const FALLBACK: CoreValue[] = [
-  { title: "Finding Balance", description: "I'm a Paragraph. Click Here To Add Your Own Text And Edit Me." },
-  { title: "Finding Balance", description: "I'm a Paragraph. Click Here To Add Your Own Text And Edit Me." },
-  { title: "Finding Balance", description: "I'm a Paragraph. Click Here To Add Your Own Text And Edit Me." },
-  { title: "Finding Balance", description: "I'm a Paragraph. Click Here To Add Your Own Text And Edit Me." },
+  { title: "Results First", description: "We believe marketing should always deliver measurable outcomes. Every campaign we run is focused on performance, profitability, and scalable growth. Data guides our decisions, ensuring every strategy contributes directly to revenue and long-term success." },
+  { title: "Strategic Thinking", description: "Success in the digital landscape requires more than tactics. We combine data, creativity, and deep market insights to build strategies that position brands for sustainable growth across multiple channels and platforms." },
+  { title: "Partnership Mindset", description: "We treat our clients as partners. By understanding each business deeply, we align our goals with theirs and work collaboratively to achieve meaningful and lasting growth." },
+  { title: "Continuous Optimization", description: "Digital markets evolve constantly, and so do we. Through constant testing, analysis, and refinement, we improve campaigns and strategies to maximize performance and unlock new growth opportunities." },
 ];
 
 export default function CoreValues({ coreValues }: Props) {
@@ -16,7 +16,7 @@ export default function CoreValues({ coreValues }: Props) {
     <>
       <div className="py-16">
         <h1 className="text-3xl md:text-3xl font-bold mb-4">Our Core Values</h1>
-        <p>paragraph paragraph paragraph paragraph paragraph paragraph paragraph<br />paragraph paragraph paragraph paragraph</p>
+        <p>Our values guide how we work with every partner, every campaign, and every strategy. <br/> We focus on measurable growth, long-term partnerships, and delivering marketing that drives real business impact.</p>
       </div>
       <section className="pt-4 pb-8 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">

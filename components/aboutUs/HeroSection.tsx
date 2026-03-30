@@ -20,7 +20,7 @@ export default function HeroSection({ title, subtitle, description }: Props) {
             {title ? title : <>We Are <span className="text-primary">Developers</span></>}
           </h1>
           <p className="text-gray-600 text-xl mb-8 leading-relaxed">
-            {description || "We help ambitious companies scale faster with data-driven marketing strategies, creative campaigns, and measurable results."}
+            {description || "We help medium to large-scale businesses accelerate digital growth through measurable, profit-driven strategies."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <button className="bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-secondary transition duration-300">Start Your Growth Journey →</button>

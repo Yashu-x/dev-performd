@@ -4,9 +4,11 @@ interface Service { title: string; description: string; link: string; }
 interface Props { services: Service[]; }
 
 const FALLBACK = [
-  { title: "Web Designing", description: "I'm a paragraph. Click here to add your own text and edit me.", link: "#" },
-  { title: "App Development", description: "We create high-quality apps with stunning design and smooth performance.", link: "#" },
-  { title: "SEO Optimization", description: "Boost your website ranking with our proven SEO strategies.", link: "#" },
+  { title: "Marketplace Management", description: "We help brands grow and scale on online marketplaces through strategic product optimization and data-driven management. Our team handles listings, performance monitoring, and growth strategies.", link: "#" },
+  { title: "Social Media Advertising", description: "Reach and convert your ideal audience through highly targeted advertising. Our performance-driven campaigns are designed to help your business grow.", link: "#" },
+  { title: "PPC Advertising", description: "Drive immediate, measurable traffic with expertly managed Pay-Per-Click campaigns. Our approach focuses on data analysis, strategic bidding, and continuous optimization to maximize ROI and reduce wasted ad spend.", link: "#" },
+  { title: "Search Engine Optimization", description: "Improve your website’s visibility on search engines through technical optimization, keyword strategy, and authority building. Our SEO strategies are designed to increase organic traffic, strengthen search rankings, and generate long-term growth.", link: "#" },
+  { title: "Web Design and Development", description: "Build high-performing, modern websites that combine strong design with seamless functionality. We create responsive, conversion-focused websites tailored to support your brand’s digital growth and user experience.", link: "#" },
 ];
 
 export default function Services({ services }: Props) {

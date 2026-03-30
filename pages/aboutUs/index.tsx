@@ -15,8 +15,8 @@ export default function AboutUsPage({ data }: { data: any }) {
       <HeroSection title={data?.heroTitle} subtitle={data?.heroSubtitle} description={data?.heroDescription} />
       <Services services={data?.services ?? []} />
       <StatSection stats={data?.stats ?? []} />
-      <TeamInfo team={data?.team ?? []} />
-      <Reviews testimonials={data?.testimonials ?? []} />
+      {/* <TeamInfo team={data?.team ?? []} /> */}
+      {/* <Reviews testimonials={data?.testimonials ?? []} /> */}
       <Content heading={data?.contentHeading} description={data?.contentDescription} />
       <CoreValues coreValues={data?.coreValues ?? []} />
     </main>

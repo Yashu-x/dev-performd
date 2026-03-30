@@ -2,9 +2,9 @@ interface Stat { value: string; label: string; }
 interface Props { stats: Stat[]; }
 
 const FALLBACK: Stat[] = [
-  { value: "500+", label: "Happy Clients" },
-  { value: "250+", label: "Avg ROI Increase" },
-  { value: "5 Years", label: "Industry Experience" },
+  { value: "50+", label: "Happy Clients" },
+  { value: "7+", label: "Avg ROAS Generated" },
+  { value: "5+ Years", label: "Industry Experience" },
 ];
 
 export default function StatSection({ stats }: Props) {
