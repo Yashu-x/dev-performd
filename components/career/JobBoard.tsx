@@ -16,9 +16,7 @@ interface Props {
 }
 
 const FALLBACK_JOBS: Job[] = [
-  { title: "UI/UX Product Designer", category: "Design", description: "I'm a paragraph. Click here to add your own text and edit me.", location: "Nugegoda", salary: "28k - 36k", tags: [] },
-  { title: "Social Media Marketing", category: "Marketing", description: "I'm a paragraph. Click here to add your own text and edit me.", location: "Nugegoda", salary: "28k - 36k", tags: ["100% Remote", "Full Time"] },
-  { title: "Web Developer", category: "Development", description: "I'm a paragraph. Click here to add your own text and edit me.", location: "Nugegoda", salary: "28k - 36k", tags: ["100% Remote", "Full Time"] },
+  
 ];
 
 const FALLBACK_CATEGORIES = ["All", "Development", "Design", "Marketing", "Customer Service", "Finance", "Management", "Operations"];
