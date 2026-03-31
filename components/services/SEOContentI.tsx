@@ -3,21 +3,21 @@ export default function SeoContentI() {
   const features = [
     {
       icon:"/coreValues/balance.png",
-      title: "On-Page SEO",
+      title: "Technical SEO Excellence",
       description:
-        "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
+        "We ensure your website’s technical infrastructure supports long-term organic growth, improving crawl efficiency and search visibility.",
     },
     {
       icon:"/coreValues/balance.png",
-      title: "Your Backlink Profile",
+      title: "Content & Keyword Alignment",
       description:
-        "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
+        "Our strategies connect real search demand with optimized landing pages that satisfy both algorithms and customers.",
     },
     {
       icon:"/coreValues/balance.png",
-      title: "SERP Ranking & Reports",
+      title: "Transparent Performance Reporting",
       description:
-        "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
+        "Clear dashboards and structured reports ensure you understand how SEO activities translate into traffic, rankings, and revenue.",
     },
   ];
 
@@ -27,14 +27,17 @@ export default function SeoContentI() {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">
           <span className="text-black pr-4">
-          Working with an  
+          WHY SHOULD YOU  
           </span>
           <span>
-          SEO company in Sri Lanka?
+          WORK WITH A MARTECH AGENCY??
           </span>
         </h2>
         <p className="mt-2 text-black">
-          I’m a paragraph. Click here to add your own text
+          International SEO strategies. Local expertise. Performance accountability.<br/>
+          <span className="text-white">
+            We combine global best practices with disciplined execution to help brands compete in search markets that are increasingly competitive and algorithm-driven.
+          </span>
         </p>
       </div>
 

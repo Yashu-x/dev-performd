@@ -5,7 +5,8 @@ import SEOContentI from "../../components/services/SEOContentI";
 import BusinessUnderstanding from "../../components/services/BusinessUnderstanding";
 import WhatWeDontDo from "../../components/services/WhatWeDontDo";
 import Content from "../../components/services/Content";
-import FAQSection from "../../components/contactUs/FAQSection";
+import FAQSection from "@/components/services/FAQSection";
+
 
 export default function ComingSoon() {
   return (

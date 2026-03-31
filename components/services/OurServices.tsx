@@ -9,11 +9,11 @@ type Service = {
 };
 
 const services: Service[] = [
-  { title: "A/B And Multivariate Testing",CardImage:"/RectangleHero.png", description: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",CardSize:"m" },
-  { title: "User Behavior Analysis",CardImage:"/RectangleHero.png", description: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",CardSize:"m" },
-  { title: "Landing Page Optimization",CardImage:"/RectangleHero.png", description: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",CardSize:"m" },
-  { title: "Personalization Techniques",CardImage:"/RectangleHero.png", description: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",CardSize:"l" },
-  { title: "Conversion Funnel Optimization",CardImage:"/RectangleHero.png", description: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",CardSize:"l" },
+  { title: "Technical SEO & Site Architecture",CardImage:"/RectangleHero.png", description: "A strong SEO strategy starts with the right technical foundation. We audit and optimize your site architecture, crawlability, indexation, page speed, and structured data to ensure search engines can properly discover, understand, and rank your pages.",CardSize:"m" },
+  { title: "On-Page & Product/Category Optimization",CardImage:"/RectangleHero.png", description: "Search engines reward relevance. We optimize product pages, category pages, metadata, internal linking, and content structure to improve keyword visibility while ensuring pages are designed to convert visitors into customers.",CardSize:"m" },
+  { title: "Keyword & Competitor Research",CardImage:"/RectangleHero.png", description: "Winning SEO strategies start with deep market insight. We analyze search demand, competitor rankings, keyword gaps, and customer intent to build a roadmap that targets the most valuable opportunities in your category.",CardSize:"m" },
+  { title: "Authority Building",CardImage:"/RectangleHero.png", description: "Search engines trust websites that demonstrate authority. Through strategic link acquisition, content partnerships, and brand signals, we strengthen your domain authority and improve ranking potential across competitive keywords.",CardSize:"l" },
+  { title: "Conversion Tracking & ROI Reporting",CardImage:"/RectangleHero.png", description: "Traffic without measurable impact is meaningless. We implement advanced tracking to connect SEO performance directly to revenue, helping you understand how organic search contributes to real business growth.",CardSize:"l" },
 ];
 
 export default function OurSevices() {
@@ -21,7 +21,7 @@ export default function OurSevices() {
     <section className="bg-secondary py-12 px-6">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-bold">What We Do</h2>
-        <p className="text-gray-600 mt-2">I’m a paragraph. Click here to add your own text and edit me.</p>
+        {/* <p className="text-gray-600 mt-2">I’m a paragraph. Click here to add your own text and edit me.</p> */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto pb-6">

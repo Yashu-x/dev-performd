@@ -10,8 +10,8 @@ const Icon = () => (
   <div className="bg-primary rounded-lg px-2 items-center">
     <Image
       src={'/icon.png'}
-      width={"45px"}
-      height={"45px"}
+      width={"25px"}
+      height={"25px"}
       className=""
     />
   </div>
@@ -30,22 +30,20 @@ const Card: FC<CardProps> = ({ title, text }) => (
 );
 
 export default function BusinessUnderstanding() {
-  const text =
-    "I'm a Paragraph. Click Here To Add Your Own Text And Edit Me. It's Easy. Just Click “Edit Text” Or Double Click Me To Add Your Own Content And Make Changes To The This Is A Great Space To Write A Long Text About Your Company And Your Services. You Can Use This Space To Go Into A Little More Detail About Your Own Company.";
 
   // Data array for cards
   const cards: CardProps[] = [
-    { title: "Understanding Your Business Is #1, And Start With It.", text },
-    { title: "Research Your Market & Competitors Deeply.", text },
-    { title: "Align SEO Goals With Real Business KPIs.", text },
-    { title: "Build A Roadmap & Execute Iteratively.", text },
+    { title: "Understanding Your Business First", text:"Before developing an SEO roadmap, we analyze your product margins, customer acquisition model, and growth objectives to ensure organic search supports your overall business strategy." },
+    { title: "Researching Your Market & Competitors", text:"We evaluate competitor visibility, search demand trends, and ranking opportunities to identify the areas where your brand can gain a sustainable advantage." },
+    { title: "Aligning SEO With Real Business KPIs", text:"We focus on measurable outcomes such as qualified traffic, conversions, and revenue—not vanity metrics like impressions or keyword counts." },
+    { title: "Building a Scalable SEO Roadmap", text:"SEO success requires consistency and iteration. We develop and execute structured roadmaps that evolve as search trends and algorithms change." },
   ];
 
   return (
     <section className="py-12 px-4 max-w-6xl mx-auto">
       <h2 className="text-center font-bold text-2xl md:text-3xl">
-        Don’t leave to chance. Work with the top <br />
-        <span className="text-primary">SEO company in Sri Lanka</span>
+        WHY BRANDS CHOOSE PERFOMAD FOR FOR SEO <br />
+        <span className="text-primary">Don’t leave organic growth to chance. Work with a performance-focused SEO partner.</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
