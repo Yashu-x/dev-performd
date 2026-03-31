@@ -11,10 +11,10 @@ export default function Content() {
         {/* Left content */}
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 capitalize">
-            Looks like we’re a great match—let’s start with a bite-sized step!  
+            Looks like we might be a great match—let’s start with a simple first step  
           </h1>
           <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
-            Start with our FREE audit to see where you stand—no stress, no guesswork, just clarity before you take your next step.
+            Start with a free SEO audit and strategy discussion. We’ll analyze your website, identify opportunities, and outline a clear roadmap for improving your organic growth.
           </p>
         </div>
 
