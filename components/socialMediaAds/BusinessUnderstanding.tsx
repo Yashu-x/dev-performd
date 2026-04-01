@@ -33,17 +33,17 @@ export default function BusinessUnderstanding() {
 
   // Data array for cards
   const cards: CardProps[] = [
-    { title: "Understanding Your Business First", text:"Before developing an SEO roadmap, we analyze your product margins, customer acquisition model, and growth objectives to ensure organic search supports your overall business strategy." },
-    { title: "Researching Your Market & Competitors", text:"We evaluate competitor visibility, search demand trends, and ranking opportunities to identify the areas where your brand can gain a sustainable advantage." },
-    { title: "Aligning SEO With Real Business KPIs", text:"We focus on measurable outcomes such as qualified traffic, conversions, and revenue—not vanity metrics like impressions or keyword counts." },
-    { title: "Building a Scalable SEO Roadmap", text:"SEO success requires consistency and iteration. We develop and execute structured roadmaps that evolve as search trends and algorithms change." },
+    { title: "We Start With Business Objectives", text:"Before launching anything, we align on margins, targets, and growth priorities—ads support the business, not just traffic numbers." },
+    { title: "We Research Your Audience Deeply", text:"We analyze behaviors, motivations, objections, and buying triggers—then translate insights into campaign and creative strategy." },
+    { title: "We Optimize Around Real KPIs", text:"ROAS, CPA, conversion rate, and customer acquisition cost—not likes or impressions." },
+    { title: "We Test, Learn, and Scale Continuously", text:"Paid social evolves fast. We iterate aggressively—scaling what works, cutting what doesn’t, and staying ahead of platform changes." },
   ];
 
   return (
     <section className="py-12 px-4 max-w-6xl mx-auto">
       <h2 className="text-center font-bold text-2xl md:text-3xl">
-        WHY BRANDS CHOOSE PERFOMAD FOR SEO <br />
-        <span className="text-primary">Don’t leave organic growth to chance. Work with a performance-focused SEO partner.</span>
+        WHY BRANDS CHOOSE PERFOMAD FOR PAID SOCIAL <br />
+        <span className="text-primary">Don’t spend on ads blindly. Work with a team built for performance.</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
