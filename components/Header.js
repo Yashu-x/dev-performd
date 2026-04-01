@@ -157,6 +157,17 @@ function NavLinks({ closeMenu, isMobile }) {
               Marketplace Management
             </a>
           </Link>
+          <Link href="/webDesignDevelopment">
+            <a
+              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
+              onClick={() => {
+                setDropdownOpen(false);
+                closeMenu && closeMenu();
+              }}
+            >
+              Web Design And Development
+            </a>
+          </Link>
         </div>
       </li>
 
