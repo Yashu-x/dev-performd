@@ -23,6 +23,11 @@ const pages = [
     path: "/admin/blogs",
     description: "Create, edit, publish, and delete blog posts",
   },
+  {
+    title: "Testimonials",
+    path: "/admin/testimonials",
+    description: "Manage client testimonials and reviews",
+  },
 ];
 
 const AdminDashboard: NextPage = () => {
