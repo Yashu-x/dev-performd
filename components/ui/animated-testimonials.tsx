@@ -145,6 +145,14 @@ export const AnimatedTestimonials = ({
               </button>
             </div>
           </div>
+            <div className="flex justify-center md:col-span-2 mt-4">
+              <a
+                href={"/testimonials"}
+                className="px-8 py-3 text-base font-bold text-white transition-all bg-[#25A18E] rounded-full hover:bg-opacity-90 hover:shadow-lg"
+              >
+                Client Testimonials
+              </a>
+            </div>
         </div>
       </div>
     </div>
