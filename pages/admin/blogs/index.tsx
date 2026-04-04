@@ -266,6 +266,27 @@ const BlogsAdmin: NextPage = () => {
 
   return (
     <div style={s.page}>
+      <style>{`
+        @media (max-width: 1024px) {
+          .admin-layout {
+            grid-template-columns: 1fr !important;
+            padding: 16px !important;
+          }
+          .admin-sidebar {
+            position: static !important;
+          }
+          .admin-header {
+            padding: 16px !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .admin-grid2 {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
       {toast && (
         <div
           style={{
@@ -285,7 +306,7 @@ const BlogsAdmin: NextPage = () => {
         </div>
       )}
 
-      <header style={s.header}>
+      <header style={s.header} className="admin-header">
         <div style={s.headerLeft}>
           <div style={s.breadcrumb}>
             <span style={s.breadcrumbLink} onClick={() => router.push("/admin")}>
@@ -310,8 +331,8 @@ const BlogsAdmin: NextPage = () => {
         </div>
       </header>
 
-      <div style={s.layout}>
-        <aside style={s.sidebar}>
+      <div style={s.layout} className="admin-layout">
+        <aside style={s.sidebar} className="admin-sidebar">
           <div style={s.sidebarHeader}>
             <h2 style={s.sidebarTitle}>Posts</h2>
             <span style={s.sidebarCount}>{blogs.length}</span>
@@ -363,7 +384,7 @@ const BlogsAdmin: NextPage = () => {
               )}
             </div>
 
-            <div style={s.grid2}>
+            <div style={s.grid2} className="admin-grid2">
               <Field label="Title">
                 <Input
                   value={form.title}
@@ -389,7 +410,7 @@ const BlogsAdmin: NextPage = () => {
               />
             </Field>
 
-            <div style={s.grid2}>
+            <div style={s.grid2} className="admin-grid2">
               <Field label="Category">
                 <Input
                   value={form.category}
@@ -407,7 +428,7 @@ const BlogsAdmin: NextPage = () => {
               </Field>
             </div>
 
-            <div style={s.grid2}>
+            <div style={s.grid2} className="admin-grid2">
               <Field label="Author Name">
                 <Input
                   value={form.authorName}
