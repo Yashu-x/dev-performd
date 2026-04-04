@@ -35,6 +35,10 @@ export default function Footer() {
                 {" "}
                 <span>Testemonials</span>
               </a>
+              <a href="/career">
+                {" "}
+                <span>Careers</span>
+              </a>
               <a href="#faq">
                 {" "}
                 <span>FAQs</span>

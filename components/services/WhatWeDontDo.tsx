@@ -9,8 +9,8 @@ const Icon = () => (
   <div className="bg-primary rounded-lg px-2 items-center">
     <Image
       src={'/icon.png'}
-      width={"20px"}
-      height={"20px"}
+      width={"10px"}
+      height={"10px"}
       className=""
     />
   </div>
@@ -19,13 +19,20 @@ const Icon = () => (
 const ListItem: FC<ListItemProps> = ({ text }) => (
   <div className="flex items-start gap-3">
     <Icon />
-    <p className="text-gray-600 text-sm leading-relaxed">{text}</p>
+    <p className="text-gray-600  leading-relaxed">{text}</p>
   </div>
 );
 
 export default function WhatWeDontDo() {
-  const listText =
-    "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.";
+  const listText1 =
+    "We don’t rely on outdated SEO tactics or shortcuts";
+  const listText2 =
+    "We don’t chase rankings without considering conversion impact";
+  const listText3 =
+    "We don’t promise unrealistic “instant ranking” results";
+
+  const listText4 =
+    "We don’t operate without transparent reporting and accountability";
 
   return (
     <section className="bg-teal-50 py-12 px-4">
@@ -40,10 +47,10 @@ export default function WhatWeDontDo() {
 
           {/* List Items */}
           <div className="flex flex-col gap-6">
-            <ListItem text={listText} />
-            <ListItem text={listText} />
-            <ListItem text={listText} />
-            <ListItem text={listText} />
+            <ListItem text={listText1} />
+            <ListItem text={listText2} />
+            <ListItem text={listText3} />
+            <ListItem text={listText4} />
           </div>
         </div>
       </div>

@@ -1,9 +1,15 @@
 "use client";
 import MarketplaceManagementSection from "../../components/marketplaceManagement/MarketplaceManagementSection";
-import FAQSection from "../../components/contactUs/FAQSection";
 import ReviewsInMarketplaceManagementPage from "../../components/marketplaceManagement/ReviewsInMarketplaceManagementPage";
 import WorkflowSection from "../../components/marketplaceManagement/WorkflowSection";
 import BrandsSection from "../../components/marketplaceManagement/BrandsSection";
+import HeroSection from "@/components/marketplaceManagement/HeroSection";
+import OurSevices from "@/components/marketplaceManagement/OurServices";
+import SeoContentI from "@/components/marketplaceManagement/SEOContentI";
+import BusinessUnderstanding from "@/components/marketplaceManagement/BusinessUnderstanding";
+import WhatWeDontDo from "@/components/marketplaceManagement/WhatWeDontDo";
+import Content from "@/components/marketplaceManagement/Content";
+import FAQSection from "@/components/marketplaceManagement/FAQSection";
 
 const stepsData = [
     {
@@ -26,7 +32,7 @@ const stepsData = [
 export default function MarketplaceManagement() {
     return (
         <div className="bg-background">
-            <MarketplaceManagementSection
+            {/* <MarketplaceManagementSection
                 tag="Marketplace Management"
                 title="Dominate the Digital Shelf with Strategic"
                 highlight="Marketplace Management"
@@ -37,7 +43,14 @@ export default function MarketplaceManagement() {
             <WorkflowSection steps={stepsData} />
             <BrandsSection />
             <ReviewsInMarketplaceManagementPage />
-            <FAQSection />
+            <FAQSection /> */}
+            <HeroSection />
+            <OurSevices />
+            <SeoContentI />
+            <BusinessUnderstanding />
+            <WhatWeDontDo />
+            <Content/>
+            <FAQSection faqs={[]}/>
         </div>
     );
 }

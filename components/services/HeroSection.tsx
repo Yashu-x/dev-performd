@@ -9,15 +9,16 @@ export default function HeroSection() {
       {/* Left Content */}
       <section className="w-full md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
         <div className="text-primary text-sm md:text-base mb-4">
-          Top SEO Company in Sri Lanka
+          Turn search visibility into predictable revenue with performance-driven SEO
         </div>
 
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-snug mb-6">
-          Get <span className="text-primary">unlimited traffic</span> by optimizing your website torank top for Search Engines
+        <h1 className="text-xl sm:text-2xl md:text-4xl font-bold leading-snug mb-6">
+          {/* Get <span className="text-primary">unlimited traffic</span> by optimizing your website torank top for Search Engines */}
+          We design SEO strategies that combine technical precision, content relevance, and data-driven optimization to grow organic traffic that converts.
         </h1>
 
         <button className="bg-primary text-white font-medium px-6 py-3 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto">
-          <span>Get SEO From Us</span>
+          <span>Get Your Free SEO Strategy Call</span>
         </button>
       </section>
 

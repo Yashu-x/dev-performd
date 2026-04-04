@@ -1,9 +1,16 @@
 "use client";
 import BrandsSection from "../../components/socialMediaAds/BrandsSection";
-import FAQSection from "../../components/contactUs/FAQSection";
+
 import ReviewsInSocialMediaAdsPage from "../../components/socialMediaAds/ReviewsInSocialMediaAdsPage";
 import WorkflowSection from "../../components/socialMediaAds/WorkflowSection";
 import SocialMediaAdsSection from "../../components/socialMediaAds/SocialMediaAdsSection";
+import HeroSection from "@/components/socialMediaAds/HeroSection";
+import OurSevices from "@/components/socialMediaAds/OurServices";
+import SeoContentI from "@/components/socialMediaAds/SEOContentI";
+import BusinessUnderstanding from "@/components/socialMediaAds/BusinessUnderstanding";
+import WhatWeDontDo from "@/components/socialMediaAds/WhatWeDontDo";
+import Content from "@/components/socialMediaAds/Content";
+import FAQSection from "@/components/socialMediaAds/FAQSection";
 
 const stepsData = [
     {
@@ -26,7 +33,7 @@ const stepsData = [
 export default function socialMediaAds() {
     return (
         <div className="bg-background">
-            <SocialMediaAdsSection
+            {/* <SocialMediaAdsSection
                 tag="Social Media Marketing"
                 title="Transform Your Brand with Strategic"
                 highlight="Social Media Ads"
@@ -37,7 +44,14 @@ export default function socialMediaAds() {
             <WorkflowSection steps={stepsData} />
             <BrandsSection />
             <ReviewsInSocialMediaAdsPage />
-            <FAQSection />
+            <FAQSection faqs={[]} /> */}
+            <HeroSection />
+            <OurSevices />
+            <SeoContentI />
+            <BusinessUnderstanding />
+            <WhatWeDontDo />
+            <Content/>
+            <FAQSection faqs={[]}/>
         </div>
     );
 }

@@ -1,17 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import type { GetServerSideProps, NextPage } from 'next';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { blogs } from '../../data/blogs';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import dbConnect from '../../contentManagementSystem/lib/mongodb';
+import Blog from '../../contentManagementSystem/models/Blog';
+import { BlogPost, normalizeBlogPost } from '../../lib/blogs';
 
-const BlogPostPage = () => {
-    const router = useRouter();
-    const { id } = router.query;
+interface BlogPostPageProps {
+    blog: BlogPost | null;
+}
 
-    const blog = blogs.find(b => b.id === id);
+const BlogPostPage: NextPage<BlogPostPageProps> = ({ blog }) => {
 
     if (!blog) {
         return (
@@ -80,3 +82,32 @@ const BlogPostPage = () => {
 };
 
 export default BlogPostPage;
+
+export const getServerSideProps: GetServerSideProps<BlogPostPageProps> = async (ctx) => {
+    const id = Array.isArray(ctx.params?.id) ? ctx.params?.id[0] : ctx.params?.id;
+
+    if (!id) {
+        return { props: { blog: null } };
+    }
+
+    await dbConnect();
+
+    const doc = await Blog.findOne({
+        slug: id,
+        isDeleted: false,
+        isPublished: true,
+    }).lean();
+
+    if (!doc) {
+        return { props: { blog: null } };
+    }
+
+    return {
+        props: {
+            blog: normalizeBlogPost({
+                ...doc,
+                _id: String(doc._id),
+            }),
+        },
+    };
+};

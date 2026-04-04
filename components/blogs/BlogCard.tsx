@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { BlogPost } from '../../data/blogs';
+import { BlogPost } from '../../lib/blogs';
 
 interface BlogCardProps {
     blog: BlogPost;

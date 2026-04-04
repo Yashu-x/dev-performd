@@ -10,8 +10,8 @@ export default function Testimonials() {
     <div className="bg-background">
         <BlogSection
             tag="Testimonials"
-            title="What Our Client Says"
-            description="I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click 'Edit Text' or double-click me to add your own content and make changes to the font."
+            title="What Our Clients Say"
+            description="Discover why businesses trust us. Read through their experiences and see how our tailored solutions have empowered them to hit their goals."
             component={<TestimonialsGrid />}
         />
         <HireUsBanner/>

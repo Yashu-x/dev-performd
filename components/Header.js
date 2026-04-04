@@ -11,7 +11,7 @@ export default function Header() {
       <div className="w-full bg-[#22A18D] text-white text-center py-2 text-sm font-medium">
         All Started with a Comprehensive Strategy -{" "}
         <a
-          href="#contact"
+          href="/contactUs"
           className="underline font-semibold hover:opacity-80 transition-opacity"
         >
           Get Your Free Strategy Call Now 🚀
@@ -80,6 +80,7 @@ export default function Header() {
 // Navigation Links Component
 function NavLinks({ closeMenu, isMobile }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdown2Open, setDropdown2Open] = useState(false);
 
   return (
     <ul className={`${isMobile ? "flex flex-col space-y-6" : "flex flex-wrap items-center justify-end flex-grow gap-2 pr-4 space-x-2 md:gap-6 md:space-x-6"}`}>
@@ -157,14 +158,99 @@ function NavLinks({ closeMenu, isMobile }) {
               Marketplace Management
             </a>
           </Link>
+          <Link href="/webDesignDevelopment">
+            <a
+              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
+              onClick={() => {
+                setDropdownOpen(false);
+                closeMenu && closeMenu();
+              }}
+            >
+              Web Design And Development
+            </a>
+          </Link>
         </div>
       </li>
 
       {[
         { href: "/blogs", label: "Blogs" },
         { href: "/aboutUs", label: "About" },
-        { href: "/career", label: "Careers" },
-        { href: "/testimonials", label: "Client Testimonials" },
+      ].map((item) => (
+        <li key={item.href}>
+          <a
+            href={item.href}
+            className="text-lg font-semibold text-gray-800 hover:text-gray-700 transition-colors"
+            onClick={closeMenu}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+      <li
+        className="relative group"
+        onMouseEnter={() => !isMobile && setDropdown2Open(true)}
+        onMouseLeave={() => !isMobile && setDropdown2Open(false)}
+      >
+        <button
+          className="flex items-center gap-1 text-lg font-semibold text-gray-800 hover:text-gray-700 focus:outline-none transition-colors"
+          onClick={() => setDropdown2Open(!dropdown2Open)}
+        >
+          Case Study
+          <svg
+            className={`w-4 h-4 transition-transform ${dropdown2Open ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {/* Dropdown Menu */}
+        <div
+          className={`
+            ${isMobile
+              ? `mt-2 pl-4 space-y-3 ${dropdown2Open ? 'block' : 'hidden'}`
+              : `absolute left-0 mt-2 w-48 bg-white shadow-xl rounded-lg border border-gray-100 py-2 z-50 transition-all duration-200 ${dropdown2Open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-1'}`
+            }
+          `}
+        >
+          <Link href="/milestones-xversion">
+            <a
+              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
+              onClick={() => {
+                setDropdown2Open(false);
+                closeMenu && closeMenu();
+              }}
+            >
+              XVERSION
+            </a>
+          </Link>
+          <Link href="/milestones-active">
+            <a
+              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
+              onClick={() => {
+                setDropdown2Open(false);
+                closeMenu && closeMenu();
+              }}
+            >
+              Active Products
+            </a>
+          </Link>
+          <Link href="/milestones-gnzbioscience">
+            <a
+              className="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#22A18D] transition-colors"
+              onClick={() => {
+                setDropdown2Open(false);
+                closeMenu && closeMenu();
+              }}
+            >
+              GNZ - Bio Science
+            </a>
+          </Link>
+        </div>
+      </li>
+      {[
         { href: "/contactUs", label: "Contact" },
       ].map((item) => (
         <li key={item.href}>

@@ -1,9 +1,15 @@
 "use client";
 import BrandsSection from "../../components/googleAds/BrandsSection";
-import FAQSection from "../../components/contactUs/FAQSection";
 import ReviewsInGoodleAdsPage from "../../components/googleAds/ReviewsInGoodleAdsPage";
 import WorkflowSection from "../../components/googleAds/WorkflowSection";
 import GoogleAdsSection from "../../components/googleAds/GoogleAdsSection";
+import HeroSection from "@/components/googleAds/HeroSection";
+import OurSevices from "@/components/googleAds/OurServices";
+import SeoContentI from "@/components/googleAds/SEOContentI";
+import BusinessUnderstanding from "@/components/googleAds/BusinessUnderstanding";
+import WhatWeDontDo from "@/components/googleAds/WhatWeDontDo";
+import Content from "@/components/services/Content";
+import FAQSection from "@/components/googleAds/FAQSection";
 
 const stepsData = [
   {
@@ -26,7 +32,7 @@ const stepsData = [
 export default function googleAds() {
   return (
     <div className="bg-background">
-        <GoogleAdsSection
+        {/* <GoogleAdsSection
           tag="Google Ads Marketing"
           title="Boost Your Business Growth With"
           highlight="Google Ads"
@@ -37,7 +43,14 @@ export default function googleAds() {
         <WorkflowSection steps={stepsData} />
         <BrandsSection/>
         <ReviewsInGoodleAdsPage/>
-        <FAQSection />
+        <FAQSection faqs={[]}/> */}
+        <HeroSection />
+        <OurSevices />
+        <SeoContentI />
+        <BusinessUnderstanding />
+        <WhatWeDontDo />
+        <Content/>
+        <FAQSection faqs={[]}/>
     </div>
   );
 }
